@@ -1,0 +1,39 @@
+<% layout('campground/layout/template') -%>
+    <form action="/register" method="POST"
+        class="d-flex flex-column justify-content-center align-items-center needs-validation vh-100" novalidate>
+        <div class="form-group col-6">
+            <label for="name" class="form-label">username:</label>
+            <input type="text" id="name" name="user[username]" class="form-control" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please choose a good username.
+            </div>
+        </div>
+
+        <div class="form-group col-6 mt-3">
+            <label for="password" class="form-label">password:</label>
+            <input type="password" id="password" name="user[password]" class="form-control" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please choose a good password.
+            </div>
+        </div>
+        <div class="form-group col-6 mt-3">
+            <label for="image" class="form-label">email:</label>
+            <input type="email" id="image" name="user[email]" class="form-control" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please choose a good email.
+            </div>
+        </div>
+
+        <div class="pt-2 mt-5">
+            <button type="submit" class="btn btn-success">Register</button>
+        </div>
+    </form>

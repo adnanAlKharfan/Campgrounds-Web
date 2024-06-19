@@ -1,0 +1,45 @@
+html {
+    height: 100%;
+}
+
+.B {
+    min-height: 100%;
+    background-image: url("./blur-background-6z-1920x1080.jpeg");
+}
+
+.para {
+    margin: 0;
+    color: rgba(255, 255, 255, .7);
+}
+
+.trans {
+    background-color: transparent;
+}
+
+.navbar-light .myBrand {
+    color: #fffffc;
+}
+
+.header-3 {
+    color: #fffffc;
+}
+
+#active {
+    color: #fffffc;
+    border-bottom: 2px solid #fffffc;
+    padding-bottom: 1px;
+    padding-right: 1px;
+    padding-left: 0;
+}
+
+.foot {
+    font-size: 0.6rem;
+}
+
+.m {
+    margin-top: 22%;
+}
+
+.justify-self-center {
+    justify-self: center;
+}

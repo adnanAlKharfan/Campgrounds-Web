@@ -1,0 +1,37 @@
+<%- include('./partial/link.ejs') %>
+
+    <body class="row B px-5">
+        <nav class=" trans navbar navbar-expand-lg navbar-dark align-self-start px-5">
+            <a class="navbar-brand myBrand" href="/">YelpCamp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="/" class="nav-link active" id="active">Home</a></li>
+                    <li class="nav-item"><a href="/campground" class="nav-link">Campgrounds</a></li>
+                    <% if(currentUser){ %>
+                        <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
+                        <% }else{ %>
+                            <li class="nav-item"><a href="/register" class="nav-link">register</a></li>
+                            <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+                            <% } %>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="align-self-center row justify-content-center text-center align-items-center ">
+            <h3 class="header-3">YelpCamp</h3>
+            <p class="para">Welcome to YelpCamp!</p>
+            <p class="para">Jump right in and explore our many campgrounds.</p>
+            <p class="fs-6 para">Feel free to share some of your own and comment on other!</p>
+            <a href="/campground" class="btn btn-light col-6 col-lg-3 mt-2">view Campgrounds</a>
+        </main>
+        <footer class="align-self-end text-center mb-3">
+            <p class="foot para"> &copy; 2020 YelpCamp</p>
+        </footer>
+    </body>
+
+    </html>

@@ -1,0 +1,79 @@
+<% layout('campground/layout/template') -%>
+    <h1>
+        <%= p.title %>
+    </h1>
+    <form action="/campground/<%=p._id%>/edit?_method=PUT" method="POST" class="row needs-validation"
+        enctype="multipart/form-data" novalidate>
+        <div class="form-group col-6">
+            <label for="title" class="form-label">title:</label>
+            <input type="text" id="title" name="camp[title]" value="<%= p.title %>" class="form-control" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please choose a title.
+            </div>
+        </div>
+        <div class="form-group col-6">
+            <label for="price" class="form-label">price:</label>
+            <div class="input-group ">
+
+
+                <span class="input-group-text">$</span>
+                <input type="number" id="price" step="0.01" class="form-control" value="<%=p.price%>" name="camp[price]"
+                    aria-label="Amount (to the nearest dollar)" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+                <div class="invalid-feedback">
+                    Please choose a price.
+                </div>
+
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="location" class="form-label">location:</label>
+            <input type="text" id="location" name="camp[location]" value="<%= p.location %>" class="form-control"
+                required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please choose a location.
+            </div>
+        </div>
+        <div class="form-group ">
+            <div class="input-group my-3">
+                <input type="file" class="form-control" id="inputGroupFile02" name="image" multiple>
+                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+            </div>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please choose a image.
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="description" class="form-label">description:</label>
+            <textarea name="camp[description]" id="description" rows="10" class="form-control"
+                required><%=p.description%></textarea>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please choose a description.
+            </div>
+        </div>
+
+        <% for(let i=0;i<p.image.length;i++){ %>
+            <img src="<%= p.image[i].url %> " style="width:150px;height:100px" alt="" class="img-thumbnail">
+            <label for="%= p.image[i].filename %> ">delete image number <%= i+1 %> :
+                    <input type="checkbox" id="<%= p.image[i].filename %> " name="deletedImage[]" class="d-inline"
+                        value="<%= p.image[i].filename %>"></label>
+            <% } %>
+                <div class="py-2">
+                    <button type="submit" class="btn btn-primary px-5">edit</button>
+                </div>
+    </form>
